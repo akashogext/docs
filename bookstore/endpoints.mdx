@@ -5,7 +5,7 @@ description: "Response fields and examples for the bookstore test API."
 
 ## List books
 
-`GET /books` returns an array of book objects. Each object contains `id` (integer), `title` (string), and `author_name` (string).
+`GET /books` returns an array of book objects. Each object contains `id` (integer), `title` (string), `author_name` (string), and `published_year` (integer).
 
 ## Get a book
 
@@ -16,9 +16,10 @@ description: "Response fields and examples for the bookstore test API."
 | `id` | integer | The book identifier. |
 | `title` | string | The book title. |
 | `author_name` | string | The author name. |
+| `published_year` | integer | The year the book was published. |
 
 ```json
-{"id": 1, "title": "The Sample Book", "author_name": "Alex Example"}
+{"id": 1, "title": "The Sample Book", "author_name": "Alex Example", "published_year": 2024}
 ```
 
 An unknown book ID returns status `404`.

@@ -15,7 +15,7 @@
         "summary": "Get a book",
         "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "integer", "minimum": 1}}],
         "responses": {
-          "200": {"description": "The requested book", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Book"}, "example": {"id": 1, "title": "The Sample Book", "author_name": "Alex Example"}}}},
+          "200": {"description": "The requested book", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Book"}, "example": {"id": 1, "title": "The Sample Book", "author_name": "Alex Example", "published_year": 2024}}}},
           "404": {"description": "Book not found"}
         }
       }
@@ -23,7 +23,7 @@
   },
   "components": {
     "schemas": {
-      "Book": {"type": "object", "required": ["id", "title", "author_name"], "additionalProperties": false, "properties": {"id": {"type": "integer", "minimum": 1}, "title": {"type": "string"}, "author_name": {"type": "string"}}}
+      "Book": {"type": "object", "required": ["id", "title", "author_name", "published_year"], "additionalProperties": false, "properties": {"id": {"type": "integer", "minimum": 1}, "title": {"type": "string"}, "author_name": {"type": "string"}, "published_year": {"type": "integer", "description": "The year the book was published."}}}
     }
   }
 }
