@@ -1,0 +1,8 @@
+{
+  "question": "What fields does GET /books/{id} return?",
+  "before": {"fields": ["id", "title", "author"], "expectedAnswer": "GET /books/{id} returns id (integer), title (string), and author (string).", "sourcePath": "/bookstore/endpoints"},
+  "after": {"fields": ["id", "title", "author_name"], "expectedAnswer": "GET /books/{id} returns id (integer), title (string), and author_name (string).", "sourcePath": "/bookstore/endpoints"},
+  "rename": {"from": "author", "to": "author_name", "scope": "All schema properties, required arrays, examples, and documentation references; capture the baseline before applying this change."},
+  "removalTest": {"endpoint": "POST /books", "question": "Can I create a book with POST /books?", "expectedAfterRemoval": "The current documentation does not list POST /books as a supported endpoint.", "timing": "After the field rename test; remove endpoint and its documentation together."},
+  "apiServer": "Not provisioned. An actual reachable mock API is required before the playground request test can pass."
+}

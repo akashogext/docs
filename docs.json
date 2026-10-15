@@ -16,6 +16,18 @@
           "index",
           "quickstart"
         ]
+      },
+      {
+        "group": "Bookstore test",
+        "pages": [
+          "bookstore/quickstart",
+          "bookstore/authentication",
+          "bookstore/endpoints"
+        ]
+      },
+      {
+        "group": "Bookstore API",
+        "openapi": "bookstore/openapi.json"
       }
     ],
     "global": {

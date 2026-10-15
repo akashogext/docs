@@ -1,0 +1,24 @@
+---
+title: "Bookstore quickstart"
+description: "Explore the made-up bookstore API used for documentation tests."
+---
+
+import { TestNotice } from '/snippets/test-notice.jsx';
+
+<TestNotice />
+
+This API and every book in it are fictional test data. A live API server has not yet been provisioned.
+
+The API has three endpoints:
+
+- `GET /books` returns an array of books.
+- `POST /books` creates a book from `title` and `author`.
+- `GET /books/{id}` returns a book with `id`, `title`, and `author`.
+
+For book `1`, the expected response is:
+
+```json
+{"id": 1, "title": "The Sample Book", "author": "Alex Example"}
+```
+
+See [Authentication](/bookstore/authentication) and [Endpoints](/bookstore/endpoints).

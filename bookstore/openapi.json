@@ -1,0 +1,36 @@
+{
+  "openapi": "3.0.3",
+  "info": {"title": "Bookstore test API", "version": "1.0.0", "description": "Made-up API for Mintlify and Dosu tests. No live API server is provisioned yet."},
+  "paths": {
+    "/books": {
+      "get": {
+        "operationId": "listBooks",
+        "summary": "List books",
+        "responses": {"200": {"description": "A list of books", "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Book"}}}}}}
+      },
+      "post": {
+        "operationId": "createBook",
+        "summary": "Create a book",
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/NewBook"}}}},
+        "responses": {"201": {"description": "The created book", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Book"}}}}}
+      }
+    },
+    "/books/{id}": {
+      "get": {
+        "operationId": "getBook",
+        "summary": "Get a book",
+        "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "integer", "minimum": 1}}],
+        "responses": {
+          "200": {"description": "The requested book", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Book"}, "example": {"id": 1, "title": "The Sample Book", "author": "Alex Example"}}}},
+          "404": {"description": "Book not found"}
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Book": {"type": "object", "required": ["id", "title", "author"], "additionalProperties": false, "properties": {"id": {"type": "integer", "minimum": 1}, "title": {"type": "string"}, "author": {"type": "string"}}},
+      "NewBook": {"type": "object", "required": ["title", "author"], "additionalProperties": false, "properties": {"title": {"type": "string", "minLength": 1}, "author": {"type": "string", "minLength": 1}}}
+    }
+  }
+}

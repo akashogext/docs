@@ -1,0 +1,28 @@
+---
+title: "Bookstore endpoints"
+description: "Response fields and examples for the bookstore test API."
+---
+
+## List books
+
+`GET /books` returns an array of book objects. Each object contains `id` (integer), `title` (string), and `author` (string).
+
+## Create a book
+
+`POST /books` accepts `title` and `author`, both required strings. It returns status `201` and the created book, including its integer `id`.
+
+## Get a book
+
+`GET /books/{id}` returns status `200` and exactly these fields:
+
+| Field | Type | Meaning |
+| --- | --- | --- |
+| `id` | integer | The book identifier. |
+| `title` | string | The book title. |
+| `author` | string | The author name. |
+
+```json
+{"id": 1, "title": "The Sample Book", "author": "Alex Example"}
+```
+
+An unknown book ID returns status `404`.
