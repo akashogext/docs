@@ -7,10 +7,6 @@ description: "Response fields and examples for the bookstore test API."
 
 `GET /books` returns an array of book objects. Each object contains `id` (integer), `title` (string), and `author_name` (string).
 
-## Create a book
-
-`POST /books` accepts `title` and `author_name`, both required strings. It returns status `201` and the created book, including its integer `id`.
-
 ## Get a book
 
 `GET /books/{id}` returns status `200` and exactly these fields:
