@@ -21,7 +21,7 @@
         "summary": "Get a book",
         "parameters": [{"name": "id", "in": "path", "required": true, "schema": {"type": "integer", "minimum": 1}}],
         "responses": {
-          "200": {"description": "The requested book", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Book"}, "example": {"id": 1, "title": "The Sample Book", "author": "Alex Example"}}}},
+          "200": {"description": "The requested book", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Book"}, "example": {"id": 1, "title": "The Sample Book", "author_name": "Alex Example"}}}},
           "404": {"description": "Book not found"}
         }
       }
@@ -29,8 +29,8 @@
   },
   "components": {
     "schemas": {
-      "Book": {"type": "object", "required": ["id", "title", "author"], "additionalProperties": false, "properties": {"id": {"type": "integer", "minimum": 1}, "title": {"type": "string"}, "author": {"type": "string"}}},
-      "NewBook": {"type": "object", "required": ["title", "author"], "additionalProperties": false, "properties": {"title": {"type": "string", "minLength": 1}, "author": {"type": "string", "minLength": 1}}}
+      "Book": {"type": "object", "required": ["id", "title", "author_name"], "additionalProperties": false, "properties": {"id": {"type": "integer", "minimum": 1}, "title": {"type": "string"}, "author_name": {"type": "string"}}},
+      "NewBook": {"type": "object", "required": ["title", "author_name"], "additionalProperties": false, "properties": {"title": {"type": "string", "minLength": 1}, "author_name": {"type": "string", "minLength": 1}}}
     }
   }
 }
