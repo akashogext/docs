@@ -8,12 +8,6 @@
         "operationId": "listBooks",
         "summary": "List books",
         "responses": {"200": {"description": "A list of books", "content": {"application/json": {"schema": {"type": "array", "items": {"$ref": "#/components/schemas/Book"}}}}}}
-      },
-      "post": {
-        "operationId": "createBook",
-        "summary": "Create a book",
-        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/NewBook"}}}},
-        "responses": {"201": {"description": "The created book", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Book"}}}}}
       }
     },
     "/books/{id}": {
@@ -30,8 +24,7 @@
   },
   "components": {
     "schemas": {
-      "Book": {"type": "object", "required": ["id", "title", "author_name"], "additionalProperties": false, "properties": {"id": {"type": "integer", "minimum": 1}, "title": {"type": "string"}, "author_name": {"type": "string"}}},
-      "NewBook": {"type": "object", "required": ["title", "author_name"], "additionalProperties": false, "properties": {"title": {"type": "string", "minLength": 1}, "author_name": {"type": "string", "minLength": 1}}}
+      "Book": {"type": "object", "required": ["id", "title", "author_name"], "additionalProperties": false, "properties": {"id": {"type": "integer", "minimum": 1}, "title": {"type": "string"}, "author_name": {"type": "string"}}}
     }
   }
 }
