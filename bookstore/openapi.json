@@ -1,7 +1,6 @@
 {
   "openapi": "3.0.3",
   "info": {"title": "Bookstore test API", "version": "1.0.0", "description": "Made-up API for Mintlify and Dosu tests. No live API server is provisioned yet."},
-  "servers": [{"url": "https://diesel-washing-davis-fans.trycloudflare.com", "description": "Temporary fictional API for the playground test"}],
   "paths": {
     "/books": {
       "get": {

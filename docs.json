@@ -28,6 +28,10 @@
       {
         "group": "Bookstore API",
         "openapi": "bookstore/openapi.json"
+      },
+      {
+        "group": "Hosted playground test",
+        "openapi": "playground/openapi.json"
       }
     ],
     "global": {
